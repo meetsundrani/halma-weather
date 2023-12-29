@@ -22,8 +22,6 @@ ChartJS.register(
 const TemperatureGraph = ({ cityData }) => {
     const cities = Object.keys(cityData);
     const temperatures = cities.map((city) => cityData[city].current.temp_c);
-    console.log(temperatures);
-
     const data = {
         labels: cities,
         datasets: [
@@ -36,7 +34,7 @@ const TemperatureGraph = ({ cityData }) => {
     };
 
     return (
-        <div>
+        <div className='mt-5'>
             <h2>Temperature Comparison Graph</h2>
             <Bar data={data} />
         </div>

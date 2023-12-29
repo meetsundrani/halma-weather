@@ -1,13 +1,12 @@
 import React from 'react';
+import Spinner from './Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // Handle the case where data is not available yet
 const WeatherCard = ({ weatherData }) => {
     if (!weatherData.current || !weatherData.forecast || !weatherData.forecast.forecastday[0]) {
         return (
-            <div className="spinner-border center" role="status">
-                <span className="visually-hidden">Loading...</span>
-            </div>
+            <Spinner/>
         );
     }
 

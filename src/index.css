@@ -24,3 +24,7 @@ code {
 .card:hover {
   border:solid 2px black;
 }
+
+.spin {
+margin-left: 50%;
+}
