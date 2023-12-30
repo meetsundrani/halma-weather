@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './Navbar';
 import Spinner from './Spinner';
 import './App.css'
+import { apiUrl } from './Constants';
 
 const cities = ['Bangalore', 'Chennai', 'Kolkata', 'Delhi', 'Mumbai'];
 
@@ -21,9 +22,10 @@ const App = () => {
     const fetchWeatherData = async () => {
       try {
         setLoading(true);
+        console.log(process.env.WEATHER_API_KEY)
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=fe91e0c84e794547961190823232812&q=${selectedCity}&days=1`
-        );
+          `${apiUrl}&q=${selectedCity}`
+          );
         setWeatherData(response.data);
       } catch (error) {
         console.error('Error fetching weather data:', error);
@@ -45,7 +47,7 @@ const App = () => {
       setLoading(true);
       for (const city of cities) {
         const response = await axios.get(
-          `https://api.weatherapi.com/v1/forecast.json?key=fe91e0c84e794547961190823232812&q=${city}&days=1`
+          `${apiUrl}&q=${city}`
         );
         data[city] = response.data;
       }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Spinner from './Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import direction from './direction.svg';
 
 // Handle the case where data is not available yet & blur app
 const WeatherCard = ({ weatherData }) => {

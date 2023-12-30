@@ -1,0 +1,1 @@
+export const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=fe91e0c84e794547961190823232812&days=1`
